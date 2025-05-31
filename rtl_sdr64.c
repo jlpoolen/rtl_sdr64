@@ -78,7 +78,7 @@ int main(int argc, char **argv) {
     strftime(timestamp, sizeof(timestamp), "%Y%m%d_%a_%H%M", tm_local);
 
     // Construct filename
-    char filename[512];
+    char filename[1024];
     snprintf(filename, sizeof(filename), "%s%s_%s_%us_%dg.iq",
              output_dir, name, timestamp, samp_rate, gain);
 
@@ -112,7 +112,7 @@ int main(int argc, char **argv) {
     uint64_t bytes_written = 0;
 
     // Write metadata sidecar
-    char txtname[512];
+    char txtname[1028];  // +4 for ".txt" and \0
     snprintf(txtname, sizeof(txtname), "%s.txt", filename);
     FILE *meta = fopen(txtname, "w");
     if (meta) {
