@@ -58,6 +58,4 @@ Permissions Tip
 
 If you see a usb_claim_interface error -6, make sure no other process (e.g., openwebrx, rtl_tcp, etc.) is using the device. You may also need to create a udev rule to allow non-root access.
 
-License
-
-MIT License
+License: MIT
